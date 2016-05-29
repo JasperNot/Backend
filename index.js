@@ -8,6 +8,8 @@ data: parseInt(req.params.number, 10) * 2
 };
 res.send(result);
 });
-app.listen(3000, function () {
-console.log('Example app listening on port 3000!');
-});
+app.set('port', (process.env.PORT || 5000))
+
+app.listen(app.get('port'), function () {
+  console.log('Example aoo listening on port ' + app.get('port') + ' !')
+})
